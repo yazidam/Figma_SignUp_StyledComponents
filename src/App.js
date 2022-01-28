@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import bgImg from "./assets/bg.png";
+import Sidebar from "./components/Sidebar";
 function App() {
   return (
     <Container>
-      <Wrapper>ahmed</Wrapper>
+      <Wrapper>
+        <Sidebar />
+      </Wrapper>
     </Container>
   );
 }
@@ -26,5 +29,5 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
+  display: flex;
 `;
