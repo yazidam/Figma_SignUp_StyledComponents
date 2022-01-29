@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
+import Input from "./Input";
 const Sidebar = () => {
   return (
     <Container>
@@ -12,6 +13,10 @@ const Sidebar = () => {
       </LogoWrapper>
       <Form>
         <h3>Sign Up</h3>
+        <Input placeholder="Full Name" />
+        <Input type="email" placeholder="Email" />
+        <Input type="password" placeholder="Password" />
+        <Input type="password" placeholder="Confrim Password" />
       </Form>
     </Container>
   );
