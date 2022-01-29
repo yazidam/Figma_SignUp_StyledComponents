@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import Input from "./Input";
+import SignIn from "./SignIn";
+
 const Sidebar = () => {
+  const [click, setClick] = useState(true);
+  const handelClick = () => {
+    setClick(!click);
+  };
+  console.log(click);
   return (
     <Container>
       <LogoWrapper>
@@ -11,30 +18,37 @@ const Sidebar = () => {
           Eli <span>Codes</span>
         </h3>
       </LogoWrapper>
-      <Form>
-        <h3>Sign Up</h3>
-        <Input placeholder="Full Name" />
-        <Input type="email" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
-        <Input type="password" placeholder="Confrim Password" />
-        <button>Sign Up</button>
-      </Form>
-      <div>
-        <Terms>
-          By signing up, I agree to the Privacy Policy <br /> and Terms of
-          Service
-        </Terms>
-        <h4>
-          Already have an account? <span>Sign In</span>
-        </h4>
-      </div>
+      {click ? (
+        <>
+          <Form>
+            <h3>Sign Up</h3>
+            <Input placeholder="Full Name" />
+            <Input type="email" placeholder="Email" />
+            <Input type="password" placeholder="Password" />
+            <Input type="password" placeholder="Confrim Password" />
+            <button>Sign Up</button>
+          </Form>
+          <div>
+            <Terms>
+              By signing up, I agree to the Privacy Policy <br /> and Terms of
+              Service
+            </Terms>
+            <h4>
+              Already have an account?{" "}
+              <span onClick={handelClick}>Sign In</span>
+            </h4>
+          </div>
+        </>
+      ) : (
+        <SignIn />
+      )}
     </Container>
   );
 };
 
 export default Sidebar;
 
-const Terms = styled.p`
+export const Terms = styled.p`
   padding: 0 1rem;
   text-align: center;
   font-size: 10px;
@@ -42,7 +56,7 @@ const Terms = styled.p`
   font-weight: 300;
 `;
 
-const Form = styled.form`
+export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
