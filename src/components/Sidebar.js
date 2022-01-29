@@ -17,12 +17,31 @@ const Sidebar = () => {
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Password" />
         <Input type="password" placeholder="Confrim Password" />
+        <button>Sign Up</button>
       </Form>
+      <div>
+        <Terms>
+          By signing up, I agree to the Privacy Policy <br /> and Terms of
+          Service
+        </Terms>
+        <h4>
+          Already have an account? <span>Sign In</span>
+        </h4>
+      </div>
     </Container>
   );
 };
 
 export default Sidebar;
+
+const Terms = styled.p`
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 10px;
+  color: #808080;
+  font-weight: 300;
+`;
+
 const Form = styled.form`
   width: 100%;
   display: flex;
@@ -31,6 +50,24 @@ const Form = styled.form`
   h3 {
     color: #666666;
     margin-bottom: 2rem;
+  }
+  button {
+    width: 75%;
+    max-width: 350px;
+    min-width: 250px;
+    height: 40px;
+    border: none;
+    margin: 1rem 0;
+    box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: #70edb9;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    &:hover {
+      transform: translateY(-3px);
+    }
   }
 `;
 const LogoWrapper = styled.div`
@@ -58,4 +95,20 @@ const Container = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 0 2rem;
+
+  @media (max-width: 900px) {
+    width: 100vw;
+    position: absolute;
+    padding: 0;
+  }
+  h4 {
+    color: #808080;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 2rem;
+    span {
+      color: #ff8d8d;
+      cursor: pointer;
+    }
+  }
 `;

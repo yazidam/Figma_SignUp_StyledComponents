@@ -6,7 +6,7 @@ const Input = ({ placeholder, type }) => {
     <Container>
       <StyledInput
         placeholder={placeholder && placeholder}
-        type={type ? type : "text"}
+        type={type ? type : "text"} //if we have a type we passed our type else defaut is text
         required
         autocomplete="off"
       />
