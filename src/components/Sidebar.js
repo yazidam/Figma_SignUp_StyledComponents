@@ -124,5 +124,8 @@ const Container = styled.div`
       color: #ff8d8d;
       cursor: pointer;
     }
+    ::selection {
+      color: #8ebf42;
+    }
   }
 `;
